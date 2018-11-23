@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">EasyCook</string>
+    <string name="facebook_app_id">281781155791376</string>
+    <string name="fb_login_protocol_scheme">fb281781155791376</string>
+    <string name="cancel_Login">Se cancelo la operacion</string>
+    <string name="error_Login">Ha ocurrido un error</string>
+
+</resources>

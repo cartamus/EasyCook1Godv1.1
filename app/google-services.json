@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "686423231126",
+    "firebase_url": "https://easycook-69168.firebaseio.com",
+    "project_id": "easycook-69168",
+    "storage_bucket": "easycook-69168.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:686423231126:android:984896523a48f43b",
+        "android_client_info": {
+          "package_name": "com.example.intertec.easycook"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "686423231126-l4uf2emgg5k4pv6ppjuha6bubrsccopl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBeS7cV8OoeY5qCdsOigHtEyIYP42yv2FQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
