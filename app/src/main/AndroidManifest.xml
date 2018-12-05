@@ -44,7 +44,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".Activity.Registro" />
-        <activity android:name=".Activity.Anonimo"></activity>
+        <activity android:name=".Activity.Anonimo" />
+        <activity android:name=".Activity.Google" />
+        <activity android:name=".Activity.GoogleLog"></activity>
     </application>
 
 </manifest>
