@@ -21,7 +21,7 @@ public class GoogleLog extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private SignInButton btnOut;
     private TextView txtEmail, txtUser;
-    private ImageView imgProfile;
+
     @Override
     protected void onStart() {
         super.onStart();
@@ -35,7 +35,7 @@ public class GoogleLog extends AppCompatActivity {
         btnOut = (SignInButton) findViewById(R.id.btn_sign_google);
         txtUser = (TextView) findViewById(R.id.txtUser);
         txtEmail = (TextView) findViewById(R.id.txtEmail);
-        imgProfile = (ImageView) findViewById(R.id.imgProfile);
+
 
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
@@ -49,7 +49,7 @@ public class GoogleLog extends AppCompatActivity {
 
                     txtUser.setText(user.getDisplayName());
                     txtEmail.setText(user.getEmail());
-                    Picasso.with(GoogleLog.this).load(user.getPhotoUrl()).into(imgProfile);
+
 
                     btnOut.setOnClickListener(new View.OnClickListener() {
                         @Override

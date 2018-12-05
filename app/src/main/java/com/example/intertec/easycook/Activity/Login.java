@@ -215,8 +215,11 @@ Toast.makeText(getApplicationContext(),R.string.cancel_Login,Toast.LENGTH_SHORT)
     public void startDemo(Class className) {
         startActivity(new Intent(this, className));
     }
-    public void loginAnonymously(View view) {
+    public void loginAnonimo(View view) {
         startDemo(Anonimo.class);
+    }
+    public void google(View view) {
+        startDemo(Google.class);
     }
 
 }
