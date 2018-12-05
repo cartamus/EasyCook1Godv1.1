@@ -77,4 +77,13 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="30dp"
         android:layout_marginBottom="30dp" />
+
+    <Button
+        android:id="@+id/registrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/login_button"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="277dp"
+        android:text="Button" />
 </RelativeLayout>
