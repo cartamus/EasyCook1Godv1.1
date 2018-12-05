@@ -35,6 +35,8 @@ import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import java.util.Arrays;
+
 public class Login extends AppCompatActivity {
 private LoginButton loginButton;
 private CallbackManager callbackManager;
@@ -58,6 +60,7 @@ private CallbackManager callbackManager;
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         callbackManager=CallbackManager.Factory.create();
         loginButton=(LoginButton)findViewById(R.id.login_button);
+        loginButton.setReadPermissions(Arrays.asList("email"));
         loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
