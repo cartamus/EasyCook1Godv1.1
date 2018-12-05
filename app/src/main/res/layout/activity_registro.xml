@@ -6,11 +6,42 @@
     android:layout_height="match_parent"
     tools:context=".Activity.Registro">
 
+    <EditText
+        android:id="@+id/mail2"
+        android:layout_width="226dp"
+        android:layout_height="56dp"
+        android:layout_below="@+id/login_button"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:ems="10"
+        android:hint="E-mail"
+        android:inputType="textEmailAddress"
+        tools:layout_editor_absoluteX="93dp"
+        tools:layout_editor_absoluteY="349dp" />
+
+    <EditText
+        android:id="@+id/password2"
+        android:layout_width="226dp"
+        android:layout_height="56dp"
+        android:layout_below="@+id/mail"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword"
+        tools:layout_editor_absoluteX="93dp"
+        tools:layout_editor_absoluteY="420dp" />
+
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/button_login2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteX="92dp"
-        tools:layout_editor_absoluteY="0dp" />
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="Ingresar"
+        tools:layout_editor_absoluteX="160dp"
+        tools:layout_editor_absoluteY="513dp" />
 </android.support.constraint.ConstraintLayout>
