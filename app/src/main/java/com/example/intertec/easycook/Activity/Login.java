@@ -31,6 +31,7 @@ private CallbackManager callbackManager;
     private EditText edittextPassword;
     private EditText edittextEmail;
     private Button login;
+    private  Button registro;
     private Switch recuerdame;
 
     @Override
@@ -73,8 +74,16 @@ Toast.makeText(getApplicationContext(),R.string.cancel_Login,Toast.LENGTH_SHORT)
                     gotoMain();
                     saveOnPreferences(email, password);
                 }
+
             }
         });
+        registro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+       gotoMainregistro();
+            }
+        });
+
 
     }
 
@@ -83,6 +92,7 @@ Toast.makeText(getApplicationContext(),R.string.cancel_Login,Toast.LENGTH_SHORT)
         edittextPassword = (EditText) findViewById(R.id.password);
         login = (Button) findViewById(R.id.button_login);
         recuerdame = (Switch) findViewById(R.id.switch1);
+        registro=(Button)findViewById(R.id.registrar);
 
     }
 
@@ -132,10 +142,18 @@ Toast.makeText(getApplicationContext(),R.string.cancel_Login,Toast.LENGTH_SHORT)
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);//sirve para que cierre la aplicacion y no no regrese al login
         startActivity(intent);
     }
+    private void gotoMainregistro() {
+
+        Intent intent = new Intent(this, Registro.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);//sirve para que cierre la aplicacion y no no regrese al login
+        startActivity(intent);
+    }
 @Override
     protected void onActivityResult(int requestCode,int resultCode,Intent data){
         super.onActivityResult(requestCode,resultCode,data);
         callbackManager.onActivityResult(requestCode,resultCode,data);
 }
+
+
 
 }

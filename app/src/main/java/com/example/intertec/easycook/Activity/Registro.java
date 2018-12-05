@@ -41,6 +41,7 @@ public class Registro extends AppCompatActivity {
         btnRegistrar = (Button) findViewById(R.id.button_login2);
 
         progressDialog = new ProgressDialog(this);
+
     }
     private void registrarUsuario(){
 
@@ -85,4 +86,5 @@ public class Registro extends AppCompatActivity {
         //Invocamos al método:
         registrarUsuario();
     }
+
 }
