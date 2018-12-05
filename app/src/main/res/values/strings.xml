@@ -6,6 +6,10 @@
     <string name="error_Login">Ha ocurrido un error</string>
     <string name="firebase_error_login">Error al iniciar</string>
     <string name="web_client_id">AIzaSyABnuMlt8eN47hUmZyRQiEMuhyuiJRZhM4</string>
+    <string name="not_log_in">No se pudo iniciar sesión</string>
+    <string name="not_firebase_auth">No se pudo autenticar con Firebase</string>
+    <string name="not_revoke">No se pudo revocar el acces</string>
+    <string name="not_close_session">No se pudo cerrar sesión</string>
 
 
 </resources>
