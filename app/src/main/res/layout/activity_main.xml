@@ -1,29 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activity.MainActivity">
 
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="59dp"
-        android:layout_alignParentTop="true"
+    <TextView
+        android:id="@+id/nameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="@drawable/gradiante"
-        tools:layout_editor_absoluteX="0dp">
+        android:layout_centerVertical="true"
+        android:text="Nombre"
+        android:textSize="20sp" />
 
-    </LinearLayout>
+    <TextView
+        android:id="@+id/emailTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/nameTextView"
+        android:layout_centerHorizontal="true"
+        android:text="Email"
+        android:textSize="16sp" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="61dp"
-        android:background="@drawable/gradiante"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="16dp"></LinearLayout>
-</android.support.constraint.ConstraintLayout>
+    <TextView
+        android:id="@+id/uidTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/nameTextView"
+        android:layout_centerHorizontal="true"
+        android:text="UID"
+        android:textSize="14sp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:onClick="logout"
+        android:text="@string/logout" />
+</RelativeLayout>
