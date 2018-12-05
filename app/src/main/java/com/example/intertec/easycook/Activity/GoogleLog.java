@@ -50,7 +50,7 @@ public class GoogleLog extends AppCompatActivity {
                 .build();
 
         googleApiClient = new GoogleApiClient.Builder(this)
-                .enableAutoManage(this, this)
+
                 .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
                 .build();
 

@@ -47,7 +47,6 @@ public class Google extends AppCompatActivity {
                 .build();
 
         googleApiClient = new GoogleApiClient.Builder(this)
-                .enableAutoManage(this,this)
                 .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
                 .build();
 
@@ -85,7 +84,7 @@ public class Google extends AppCompatActivity {
 
         firebaseAuth.addAuthStateListener(firebaseAuthListener);
     }
-@Override
+
 
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
 

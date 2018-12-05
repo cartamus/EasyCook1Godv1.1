@@ -38,17 +38,14 @@ import com.google.firebase.auth.FirebaseUser;
 import java.util.Arrays;
 
 public class Login extends AppCompatActivity {
-private LoginButton loginButton;
-private CallbackManager callbackManager;
+
     private SharedPreferences prefs;
     private EditText edittextPassword;
     private EditText edittextEmail;
     private Button login;
     private Button registro;
     private Switch recuerdame;
-    private FirebaseAuth firebaseAuth;
-    private FirebaseAuth.AuthStateListener firebaseAuthListener;
-    private ProgressBar progressBar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,36 +55,7 @@ private CallbackManager callbackManager;
 
         setContentView(R.layout.activity_login);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        callbackManager=CallbackManager.Factory.create();
-        loginButton=(LoginButton)findViewById(R.id.login_button);
-        loginButton.setReadPermissions(Arrays.asList("email"));
-        loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
-            @Override
-            public void onSuccess(LoginResult loginResult) {
 
-                handleFacebookAccessToken(loginResult.getAccessToken());
-            }
-
-            @Override
-            public void onCancel() {
-Toast.makeText(getApplicationContext(),R.string.cancel_Login,Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onError(FacebookException error) {
-                Toast.makeText(getApplicationContext(),R.string.error_Login,Toast.LENGTH_SHORT).show();
-            }
-        });
-        firebaseAuth=FirebaseAuth.getInstance();
-        firebaseAuthListener=new FirebaseAuth.AuthStateListener() {
-            @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                FirebaseUser user = firebaseAuth.getCurrentUser();
-                if (user != null) {
-                    gotoMain();
-                }
-            }
-        };
         bindUI();
 
         prefs = getSharedPreferences("preferencias", Context.MODE_PRIVATE);
@@ -116,23 +84,7 @@ Toast.makeText(getApplicationContext(),R.string.cancel_Login,Toast.LENGTH_SHORT)
 
     }
 
-    private void handleFacebookAccessToken(AccessToken accessToken) {
-        progressBar.setVisibility(View.VISIBLE);
-        loginButton.setVisibility(View.GONE);
 
-        AuthCredential credential = FacebookAuthProvider.getCredential(accessToken.getToken());
-        firebaseAuth.signInWithCredential(credential).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if (!task.isSuccessful()) {
-                    Toast.makeText(getApplicationContext(), R.string.firebase_error_login, Toast.LENGTH_LONG).show();
-                }
-                progressBar.setVisibility(View.GONE);
-                loginButton.setVisibility(View.VISIBLE);
-            }
-        });
-
-    }
 
 
     private void bindUI() {
@@ -196,22 +148,7 @@ Toast.makeText(getApplicationContext(),R.string.cancel_Login,Toast.LENGTH_SHORT)
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);//sirve para que cierre la aplicacion y no no regrese al login
         startActivity(intent);
     }
-@Override
-    protected void onActivityResult(int requestCode,int resultCode,Intent data){
-        super.onActivityResult(requestCode,resultCode,data);
-        callbackManager.onActivityResult(requestCode,resultCode,data);
-}
-    @Override
-    protected void onStart() {
-        super.onStart();
-        firebaseAuth.addAuthStateListener(firebaseAuthListener);
-    }
 
-    @Override
-    protected void onStop() {
-        super.onStop();
-        firebaseAuth.removeAuthStateListener(firebaseAuthListener);
-    }
     public void startDemo(Class className) {
         startActivity(new Intent(this, className));
     }

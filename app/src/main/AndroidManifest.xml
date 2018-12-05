@@ -46,7 +46,8 @@
         <activity android:name=".Activity.Registro" />
         <activity android:name=".Activity.Anonimo" />
         <activity android:name=".Activity.Google" />
-        <activity android:name=".Activity.GoogleLog"></activity>
+        <activity android:name=".Activity.GoogleLog" />
+        <activity android:name=".Activity.Facebook"></activity>
     </application>
 
 </manifest>
