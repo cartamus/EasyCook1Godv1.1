@@ -8,5 +8,6 @@ public class EasyCook extends Application {
     public void onCreate() {
         super.onCreate();
         SystemClock.sleep(3000);
+
     }
 }

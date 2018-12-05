@@ -3,6 +3,7 @@ package com.example.intertec.easycook.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -41,6 +42,7 @@ private CallbackManager callbackManager;
         AppEventsLogger.activateApp(this);
 
         setContentView(R.layout.activity_login);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         callbackManager=CallbackManager.Factory.create();
         loginButton=(LoginButton)findViewById(R.id.login_button);
         loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {

@@ -1,6 +1,7 @@
 package com.example.intertec.easycook.Activity;
 
 import android.app.ProgressDialog;
+import android.content.pm.ActivityInfo;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -31,6 +32,7 @@ public class Registro extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         //inicializamos el objeto firebaseAuth
         firebaseAuth = FirebaseAuth.getInstance();
 

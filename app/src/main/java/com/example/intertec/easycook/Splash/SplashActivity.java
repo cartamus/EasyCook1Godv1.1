@@ -3,6 +3,7 @@ package com.example.intertec.easycook.Splash;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -16,6 +17,7 @@ private SharedPreferences prefs;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         prefs=getSharedPreferences("preferencias", Context.MODE_PRIVATE);
         Intent intentLogin=new Intent(this,Login.class);
         Intent intentMain=new Intent(this,MainActivity.class);
