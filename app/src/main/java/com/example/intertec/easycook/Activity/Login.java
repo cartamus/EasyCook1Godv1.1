@@ -212,6 +212,11 @@ Toast.makeText(getApplicationContext(),R.string.cancel_Login,Toast.LENGTH_SHORT)
         super.onStop();
         firebaseAuth.removeAuthStateListener(firebaseAuthListener);
     }
-
+    public void startDemo(Class className) {
+        startActivity(new Intent(this, className));
+    }
+    public void loginAnonymously(View view) {
+        startDemo(Anonimo.class);
+    }
 
 }
