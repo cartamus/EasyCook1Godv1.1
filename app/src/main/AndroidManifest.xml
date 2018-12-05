@@ -43,7 +43,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activity.Registro"></activity>
+        <activity android:name=".Activity.Registro" />
+        <activity android:name=".Activity.Anonimo"></activity>
     </application>
 
 </manifest>

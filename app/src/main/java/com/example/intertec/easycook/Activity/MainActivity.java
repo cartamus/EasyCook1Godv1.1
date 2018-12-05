@@ -44,7 +44,7 @@ private SharedPreferences prefs;
             emailTextView.setText(email);
             uidTextView.setText(uid);
         } else {
-            goLoginScreen();
+
         }
     }
     private void goLoginScreen() {

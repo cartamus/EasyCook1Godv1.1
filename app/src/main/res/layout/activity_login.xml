@@ -39,8 +39,8 @@
 
     <EditText
         android:id="@+id/password"
-        android:layout_width="237dp"
-        android:layout_height="56dp"
+        android:layout_width="234dp"
+        android:layout_height="48dp"
         android:layout_below="@+id/mail"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
@@ -48,7 +48,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="87dp"
         android:layout_marginRight="87dp"
-        android:layout_marginBottom="425dp"
+        android:layout_marginBottom="284dp"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
@@ -84,6 +84,7 @@
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/login_button"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="277dp"
+        android:layout_marginTop="332dp"
+        android:layout_marginEnd="-73dp"
         android:text="Button" />
 </RelativeLayout>

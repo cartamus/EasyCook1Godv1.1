@@ -5,6 +5,6 @@
     <string name="cancel_Login">Se cancelo la operacion</string>
     <string name="error_Login">Ha ocurrido un error</string>
     <string name="firebase_error_login">Error al iniciar</string>
-    <string name="logout">Saliendo</string>
+
 
 </resources>

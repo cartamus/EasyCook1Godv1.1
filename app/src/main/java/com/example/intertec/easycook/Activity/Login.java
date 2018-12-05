@@ -44,7 +44,7 @@ private CallbackManager callbackManager;
     private EditText edittextPassword;
     private EditText edittextEmail;
     private Button login;
-    private  Button registro;
+    private Button registro;
     private Switch recuerdame;
     private FirebaseAuth firebaseAuth;
     private FirebaseAuth.AuthStateListener firebaseAuthListener;
