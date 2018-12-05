@@ -4,25 +4,34 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
-import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ListView;
 import android.widget.TextView;
 
-import com.example.intertec.easycook.Activity.Login;
 import com.example.intertec.easycook.R;
+import com.example.intertec.easycook.Utileria.ListViewAdapter;
+import com.example.intertec.easycook.Utileria.Model;
 import com.facebook.login.LoginManager;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 private SharedPreferences prefs;
     private TextView nameTextView;
     private TextView emailTextView;
     private TextView uidTextView;
+    ListView listView;
+    ListViewAdapter adapter;
+    String[] title;
+    String[] description;
+    int[] icon;
+    ArrayList<Model> arrayList = new ArrayList<Model>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,22 +39,32 @@ private SharedPreferences prefs;
         setContentView(R.layout.activity_main);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         prefs = getSharedPreferences("preferencias", Context.MODE_PRIVATE);
-        nameTextView = (TextView) findViewById(R.id.nameTextView);
-        emailTextView = (TextView) findViewById(R.id.emailTextView);
-        uidTextView = (TextView) findViewById(R.id.uidTextView);
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        if (user != null) {
-            String name = user.getDisplayName();
-            String email = user.getEmail();
-            Uri photoUrl = user.getPhotoUrl();
-            String uid = user.getUid();
+        //
 
-            nameTextView.setText(name);
-            emailTextView.setText(email);
-            uidTextView.setText(uid);
-        } else {
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle("Items List");
 
+        title = new String[]{"Battery", "Cpu", "Display", "Memory", "Sensor"};
+        description = new String[]{"Battery detail...", "Cpu detail...", "Display detail...", "Memory detail...", "Sensor detail..."};
+        icon = new int[]{R.drawable.comida1, R.drawable.comida2, R.drawable.comida3, R.drawable.comida4, R.drawable.comida5};
+
+        listView = findViewById(R.id.listView);
+
+        for (int i =0; i<title.length; i++){
+            Model model = new Model(title[i], description[i], icon[i]);
+            //bind all strings in an array
+            arrayList.add(model);
         }
+
+        //pass results to listViewAdapter class
+        adapter = new ListViewAdapter(this, arrayList);
+
+        //bind the adapter to the listview
+        listView.setAdapter(adapter);
+
+        //
+
+
     }
     private void goLoginScreen() {
         Intent intent = new Intent(this, Login.class);
@@ -56,6 +75,28 @@ private SharedPreferences prefs;
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu,menu);
+        //no jala esta madre
+     /*  MenuItem myActionMenuItem = menu.findItem(R.id.action_search);
+        SearchView searchView = (SearchView)myActionMenuItem.getActionView();
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+                if (TextUtils.isEmpty(s)){
+                    adapter.filter("");
+                    listView.clearTextFilter();
+                }
+                else {
+                    adapter.filter(s);
+                }
+                return true;
+            }
+        });
+*/
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -68,6 +109,9 @@ private SharedPreferences prefs;
             case R.id.forget_logout:
                 removeSharePreferences();
                 logout1();
+                return true;
+            case R.id.action_settings:
+
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
