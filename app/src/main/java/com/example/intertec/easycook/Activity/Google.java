@@ -26,7 +26,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
 
-public class Google extends AppCompatActivity {
+public class Google extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
     private GoogleApiClient googleApiClient;
 
     private SignInButton signInButton;
@@ -47,7 +47,7 @@ public class Google extends AppCompatActivity {
                 .build();
 
         googleApiClient = new GoogleApiClient.Builder(this)
-
+                .enableAutoManage(this,this)
                 .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
                 .build();
 
@@ -86,7 +86,7 @@ public class Google extends AppCompatActivity {
         firebaseAuth.addAuthStateListener(firebaseAuthListener);
     }
 
-
+@Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
 
     }
@@ -142,5 +142,10 @@ public class Google extends AppCompatActivity {
         if (firebaseAuthListener != null) {
             firebaseAuth.removeAuthStateListener(firebaseAuthListener);
         }
+    }
+
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+
     }
 }

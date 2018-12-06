@@ -24,7 +24,7 @@ import com.bumptech.glide.Glide;
 import com.google.firebase.auth.UserInfo;
 import com.squareup.picasso.Picasso;
 
-public class GoogleLog extends AppCompatActivity {
+public class GoogleLog extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
     private ImageView photoImageView;
     private TextView nameTextView;
     private TextView emailTextView;
@@ -50,7 +50,7 @@ public class GoogleLog extends AppCompatActivity {
                 .build();
 
         googleApiClient = new GoogleApiClient.Builder(this)
-
+                .enableAutoManage(this,this)
                 .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
                 .build();
 
@@ -82,7 +82,7 @@ public class GoogleLog extends AppCompatActivity {
     }
 
     private void goLogInScreen() {
-        Intent intent = new Intent(this, Google.class);
+        Intent intent = new Intent(this, Login.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }
@@ -117,7 +117,7 @@ public class GoogleLog extends AppCompatActivity {
         });
     }
 
-
+@Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
 
     }
@@ -129,5 +129,10 @@ public class GoogleLog extends AppCompatActivity {
         if (firebaseAuthListener != null) {
             firebaseAuth.removeAuthStateListener(firebaseAuthListener);
         }
+    }
+
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+
     }
 }
