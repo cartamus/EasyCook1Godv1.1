@@ -7,6 +7,8 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.SearchView;
+import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -76,7 +78,7 @@ private SharedPreferences prefs;
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu,menu);
         //no jala esta madre
-     /*  MenuItem myActionMenuItem = menu.findItem(R.id.action_search);
+      MenuItem myActionMenuItem = menu.findItem(R.id.action_search);
         SearchView searchView = (SearchView)myActionMenuItem.getActionView();
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -96,7 +98,7 @@ private SharedPreferences prefs;
                 return true;
             }
         });
-*/
+
         return super.onCreateOptionsMenu(menu);
     }
 

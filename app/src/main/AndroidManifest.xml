@@ -49,6 +49,7 @@
         <activity android:name=".Activity.GoogleLog" />
         <activity android:name=".Activity.Facebook" />
         <activity android:name=".Activity.FacebookLog"></activity>
+        <activity android:name=".Activity.NewActivity"></activity>
     </application>
 
 </manifest>
