@@ -48,7 +48,8 @@
         <activity android:name=".Activity.Google" />
         <activity android:name=".Activity.GoogleLog" />
         <activity android:name=".Activity.Facebook" />
-        <activity android:name=".Activity.FacebookLog"></activity>
+        <activity android:name=".Activity.FacebookLog" />
+        <activity android:name=".Activity.PruebaBase"></activity>
     </application>
 
 </manifest>

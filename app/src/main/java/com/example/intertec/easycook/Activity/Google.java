@@ -47,6 +47,7 @@ public class Google extends AppCompatActivity {
                 .build();
 
         googleApiClient = new GoogleApiClient.Builder(this)
+
                 .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
                 .build();
 
