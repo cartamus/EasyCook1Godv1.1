@@ -74,9 +74,11 @@
         android:layout_width="191dp"
         android:layout_height="49dp"
         android:layout_centerHorizontal="true"
+        android:onClick="face"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="30dp"
         android:layout_marginBottom="30dp" />
+
 
     <Button
         android:id="@+id/registrar"
@@ -94,8 +96,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="237dp"
-        android:layout_marginBottom="200dp"
+        android:layout_marginStart="179dp"
+        android:layout_marginBottom="166dp"
         android:onClick="loginAnonimo"
         android:text="Invitado" />
 
@@ -105,8 +107,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="42dp"
-        android:layout_marginTop="267dp"
+        android:layout_marginStart="47dp"
+        android:layout_marginTop="293dp"
         android:onClick="google"
         android:text="Google" />
 </RelativeLayout>

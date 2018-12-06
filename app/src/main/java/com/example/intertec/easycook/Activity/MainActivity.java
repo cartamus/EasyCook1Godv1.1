@@ -127,9 +127,5 @@ private SharedPreferences prefs;
     private void removeSharePreferences(){
         prefs.edit().clear().apply();//mas simplificado que en el login
     }
-    public void logout(View view) {
-        FirebaseAuth.getInstance().signOut();
-        LoginManager.getInstance().logOut();
-        goLoginScreen();
-    }
+
 }

@@ -37,7 +37,7 @@ public class Facebook extends AppCompatActivity {
         setContentView(R.layout.activity_facebook);
         callbackManager=CallbackManager.Factory.create();
         loginButton=(LoginButton)findViewById(R.id.login_button);
-        loginButton.setReadPermissions(Arrays.asList("email"));
+
         loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
@@ -85,7 +85,7 @@ public class Facebook extends AppCompatActivity {
     }
     private void gotoMain() {
 
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, FacebookLog.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);//sirve para que cierre la aplicacion y no no regrese al login
         startActivity(intent);
     }

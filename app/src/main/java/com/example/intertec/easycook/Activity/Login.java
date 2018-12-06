@@ -158,5 +158,6 @@ public class Login extends AppCompatActivity {
     public void google(View view) {
         startDemo(Google.class);
     }
+    public void face(View view) { startDemo(Facebook.class); }
 
 }
