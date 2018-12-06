@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.LoginActivity">
+
+    <Button
+        android:id="@+id/btn_log"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="179dp"
+        android:text="Button"
+        tools:layout_editor_absoluteX="131dp"
+        tools:layout_editor_absoluteY="277dp" />
+
+    <EditText
+        android:id="@+id/input_log_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/input_log_pass"
+        android:layout_marginStart="-105dp"
+        android:layout_marginTop="-112dp"
+        android:layout_toEndOf="@+id/btn_log"
+        android:ems="10"
+        android:hint="email"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="84dp"
+        tools:layout_editor_absoluteY="58dp" />
+
+    <EditText
+        android:id="@+id/input_log_pass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="-130dp"
+        android:layout_marginTop="155dp"
+        android:layout_toEndOf="@+id/btn_log"
+        android:ems="10"
+        android:hint="contrasena"
+        android:inputType="textPassword"
+        tools:layout_editor_absoluteX="83dp"
+        tools:layout_editor_absoluteY="138dp" />
+</RelativeLayout>

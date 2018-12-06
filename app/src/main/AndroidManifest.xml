@@ -52,7 +52,8 @@
         <activity android:name=".Activity.PruebaBase" />
         <activity android:name=".Activity.Correo" />
         <activity android:name=".Activity.NewActivity" />
-        <activity android:name=".Activity.RegisterActivity"></activity>
+        <activity android:name=".Activity.RegisterActivity" />
+        <activity android:name=".Activity.LoginActivity"></activity>
     </application>
 
 </manifest>
