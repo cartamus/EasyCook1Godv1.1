@@ -69,16 +69,6 @@
         tools:layout_editor_absoluteX="217dp"
         tools:layout_editor_absoluteY="336dp" />
 
-    <com.facebook.login.widget.LoginButton
-        android:id="@+id/login_button"
-        android:layout_width="191dp"
-        android:layout_height="49dp"
-        android:layout_centerHorizontal="true"
-        android:onClick="face"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="30dp" />
-
 
     <Button
         android:id="@+id/registrar"
@@ -111,4 +101,17 @@
         android:layout_marginTop="293dp"
         android:onClick="google"
         android:text="Google" />
+
+    <Button
+        android:id="@+id/BtnFace"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="135dp"
+        android:layout_marginRight="135dp"
+        android:layout_marginBottom="98dp"
+        android:onClick="face"
+        android:text="Facebook" />
 </RelativeLayout>
