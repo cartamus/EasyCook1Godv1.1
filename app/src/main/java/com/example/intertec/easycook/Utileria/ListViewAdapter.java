@@ -82,39 +82,39 @@ public class ListViewAdapter extends BaseAdapter {
             @Override
             public void onClick(View view) {
                 //code later
-                if (modellist.get(postition).getTitle().equals("Battery")){
+                if (modellist.get(postition).getTitle().equals("pizza")){
                     //start NewActivity with title for actionbar and text for textview
                     Intent intent = new Intent(mContext, NewActivity.class);
                     intent.putExtra("actionBarTitle", "Battery");
-                    intent.putExtra("contentTv", "This is Battery detail...");
+                    intent.putExtra("contentTv", "esto es pizza...");
                     mContext.startActivity(intent);
                 }
-                if (modellist.get(postition).getTitle().equals("Cpu")){
+                if (modellist.get(postition).getTitle().equals("spaguety")){
                     //start NewActivity with title for actionbar and text for textview
                     Intent intent = new Intent(mContext, NewActivity.class);
                     intent.putExtra("actionBarTitle", "Cpu");
-                    intent.putExtra("contentTv", "This is Cpu detail...");
+                    intent.putExtra("contentTv", "esto es spaguety...");
                     mContext.startActivity(intent);
                 }
-                if (modellist.get(postition).getTitle().equals("Display")){
+                if (modellist.get(postition).getTitle().equals("hamburguesa")){
                     //start NewActivity with title for actionbar and text for textview
                     Intent intent = new Intent(mContext, NewActivity.class);
                     intent.putExtra("actionBarTitle", "Display");
-                    intent.putExtra("contentTv", "This is Display detail...");
+                    intent.putExtra("contentTv", "esto es la hamburguesa...");
                     mContext.startActivity(intent);
                 }
-                if (modellist.get(postition).getTitle().equals("Memory")){
+                if (modellist.get(postition).getTitle().equals("tacos")){
                     //start NewActivity with title for actionbar and text for textview
                     Intent intent = new Intent(mContext, NewActivity.class);
                     intent.putExtra("actionBarTitle", "Memory");
-                    intent.putExtra("contentTv", "This is Memory detail...");
+                    intent.putExtra("contentTv", "esto son los tacos...");
                     mContext.startActivity(intent);
                 }
-                if (modellist.get(postition).getTitle().equals("Sensor")){
+                if (modellist.get(postition).getTitle().equals("extra")){
                     //start NewActivity with title for actionbar and text for textview
                     Intent intent = new Intent(mContext, NewActivity.class);
                     intent.putExtra("actionBarTitle", "Sensor");
-                    intent.putExtra("contentTv", "This is Sensor detail...");
+                    intent.putExtra("contentTv", "esto es lo extra...");
                     mContext.startActivity(intent);
                 }
             }

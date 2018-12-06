@@ -46,8 +46,8 @@ private SharedPreferences prefs;
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("Items List");
 
-        title = new String[]{"Battery", "Cpu", "Display", "Memory", "Sensor"};
-        description = new String[]{"Battery detail...", "Cpu detail...", "Display detail...", "Memory detail...", "Sensor detail..."};
+        title = new String[]{"pizza", "spagueti", "hamburguesa", "tacos", "extra"};
+        description = new String[]{"Detalles de pizza...", "Detalles de spagueti...", "Detalles de hamburguesa..", "Detalles de tacos...", "detalles de extra..."};
         icon = new int[]{R.drawable.comida1, R.drawable.comida2, R.drawable.comida3, R.drawable.comida4, R.drawable.comida5};
 
         listView = findViewById(R.id.listView);

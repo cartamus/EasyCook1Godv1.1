@@ -13,7 +13,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="179dp"
-        android:text="Button"
+        android:text="Ingresar"
         tools:layout_editor_absoluteX="131dp"
         tools:layout_editor_absoluteY="277dp" />
 
@@ -22,8 +22,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/input_log_pass"
-        android:layout_marginStart="-105dp"
-        android:layout_marginTop="-112dp"
+        android:layout_marginStart="-126dp"
+        android:layout_marginTop="-107dp"
         android:layout_toEndOf="@+id/btn_log"
         android:ems="10"
         android:hint="email"
