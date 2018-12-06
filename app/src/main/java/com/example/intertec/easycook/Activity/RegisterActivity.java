@@ -22,7 +22,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class RegisterActivity extends AppCompatActivity {
     private Button btnReg;
     private TextView inName, inEmail, inPass;
-
+//
     private FirebaseAuth fAuth;
     private DatabaseReference fUsersDatabase;
 
