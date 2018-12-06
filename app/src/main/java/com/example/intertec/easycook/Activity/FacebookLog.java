@@ -1,7 +1,6 @@
 package com.example.intertec.easycook.Activity;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,7 +11,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.intertec.easycook.R;
-import com.facebook.login.LoginManager;
 import com.facebook.login.widget.LoginButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -35,7 +33,7 @@ public class FacebookLog extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_facebook_log);
         mAuth = FirebaseAuth.getInstance();
-        btnOut = (LoginButton) findViewById(R.id.btnOut);
+        btnOut = (LoginButton) findViewById(R.id.BtnFace1);
         txtUser = (TextView) findViewById(R.id.txtUser);
         txtEmail = (TextView) findViewById(R.id.txtEmail);
         imgProfile = (ImageView) findViewById(R.id.imgProfile);

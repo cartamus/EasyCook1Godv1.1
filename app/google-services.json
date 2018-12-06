@@ -15,6 +15,22 @@
       },
       "oauth_client": [
         {
+          "client_id": "686423231126-svhp6ea3uoqfhkpociga6cvpm2vm131b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.intertec.easycook",
+            "certificate_hash": "2a23c72ba218f652fd18f21133513905eaa22d6c"
+          }
+        },
+        {
+          "client_id": "686423231126-s4gar7u1hm57c317sgtachuacjpm8pci.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.intertec.easycook",
+            "certificate_hash": "5def8ddb90d0037cdb20c979f402d41544f02540"
+          }
+        },
+        {
           "client_id": "686423231126-l4uf2emgg5k4pv6ppjuha6bubrsccopl.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -29,8 +45,13 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "686423231126-l4uf2emgg5k4pv6ppjuha6bubrsccopl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
           "status": 2

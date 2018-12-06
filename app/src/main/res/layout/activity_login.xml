@@ -5,6 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activity.MainActivity">
+
+    <com.facebook.login.widget.LoginButton
+        android:id="@+id/BtnFace1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="87dp" />
+
     <Button
         android:id="@+id/registrar"
         android:layout_width="wrap_content"
@@ -38,7 +48,7 @@
         android:text="Google" />
 
     <Button
-        android:id="@+id/BtnFace"
+        android:id="@+id/BtnFace1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -61,4 +71,14 @@
         android:layout_marginLeft="21dp"
         android:onClick="basedat"
         android:text="Base" />
+
+    <Button
+        android:id="@+id/emailgood"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/BtnFace1"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="159dp"
+        android:onClick="emailgood"
+        android:text="Registro email" />
 </RelativeLayout>

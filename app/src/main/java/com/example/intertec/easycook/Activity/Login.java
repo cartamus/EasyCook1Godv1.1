@@ -51,4 +51,6 @@ public class Login extends AppCompatActivity {
     }
     public void face(View view) { startDemo(Facebook.class); }
     public void basedat(View view) { startDemo(PruebaBase.class); }
+    public void emailgood(View view) { startDemo(RegisterActivity.class); }
+
 }
