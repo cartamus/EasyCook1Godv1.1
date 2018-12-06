@@ -51,6 +51,7 @@
         <activity android:name=".Activity.FacebookLog" />
         <activity android:name=".Activity.PruebaBase" />
         <activity android:name=".Activity.Correo"></activity>
+        <activity android:name=".Activity.NewActivity"></activity>
     </application>
 
 </manifest>
