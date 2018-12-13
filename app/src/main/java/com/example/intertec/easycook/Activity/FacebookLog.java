@@ -33,7 +33,7 @@ public class FacebookLog extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_facebook_log);
         mAuth = FirebaseAuth.getInstance();
-        btnOut = (LoginButton) findViewById(R.id.BtnFace1);
+        btnOut = (LoginButton) findViewById(R.id.btnOut);
         txtUser = (TextView) findViewById(R.id.txtUser);
         txtEmail = (TextView) findViewById(R.id.txtEmail);
         imgProfile = (ImageView) findViewById(R.id.imgProfile);
@@ -58,7 +58,7 @@ public class FacebookLog extends AppCompatActivity {
                     txtEmail.setText(user.getEmail());
                     Picasso.with(FacebookLog.this).load(user.getPhotoUrl()).into(imgProfile);
                 } else {
-                    Intent intent = new Intent(FacebookLog.this, Facebook.class);
+                    Intent intent = new Intent(FacebookLog.this, Login.class);
                     intent.putExtra("logout", true);
                     startActivity(intent);
                     finish();
