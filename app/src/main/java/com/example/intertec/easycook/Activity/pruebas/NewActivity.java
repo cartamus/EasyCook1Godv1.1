@@ -1,4 +1,4 @@
-package com.example.intertec.easycook.Activity;
+package com.example.intertec.easycook.Activity.pruebas;
 
 import android.content.Intent;
 import android.os.Bundle;

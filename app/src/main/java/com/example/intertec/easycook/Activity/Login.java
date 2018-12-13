@@ -17,6 +17,10 @@ import android.widget.ProgressBar;
 import android.widget.Switch;
 import android.widget.Toast;
 
+import com.example.intertec.easycook.Activity.pruebas.FacebookLog;
+import com.example.intertec.easycook.Activity.pruebas.GoogleLog;
+import com.example.intertec.easycook.Activity.pruebas.RegisterActivity;
+import com.example.intertec.easycook.Activity.pruebas.Registro;
 import com.example.intertec.easycook.Activity.pruebas.silvido;
 import com.example.intertec.easycook.Utileria.Util;
 import com.facebook.AccessToken;
@@ -226,7 +230,7 @@ public class Login extends AppCompatActivity implements GoogleApiClient.OnConnec
         startActivity(intent);
     }
     private void gotoMainemailgood() {
-        Intent intent = new Intent(this, RegisterActivity.class);
+        Intent intent = new Intent(this, RegisterEPActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);//sirve para que cierre la aplicacion y no no regrese al login
         startActivity(intent);
     }

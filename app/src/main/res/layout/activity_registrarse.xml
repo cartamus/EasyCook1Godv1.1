@@ -12,23 +12,15 @@
         android:layout_height="wrap_content"
 
 
-        android:layout_marginBottom="-367dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="159dp"
+        android:layout_marginRight="159dp"
+        android:layout_marginBottom="98dp"
         android:onClick="Registrar"
         android:text="Registrar" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
-        android:layout_alignParentTop="true"
-
-        android:layout_marginTop="111dp"
-        android:text="Ingresa tus datos:"
-        android:textAlignment="center"
-        android:textColor="@color/com_facebook_messenger_blue"
-        android:textColorHint="@color/common_google_signin_btn_text_dark_pressed"
-        android:textSize="24sp" />
 
     <EditText
         android:id="@+id/ETNombre"
@@ -37,13 +29,14 @@
 
         android:layout_alignParentTop="true"
 
-        android:layout_marginTop="234dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="241dp"
         android:layout_weight="1"
         android:ems="10"
         android:hint="Nombre"
         android:inputType="textPersonName"
-        android:textColor="@color/common_google_signin_btn_text_dark_pressed"
-        android:textColorHint="@color/common_google_signin_btn_text_dark_pressed" />
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+         />
 
     <EditText
         android:id="@+id/ETTelefono"
@@ -52,13 +45,14 @@
 
         android:layout_alignParentBottom="true"
 
-        android:layout_marginBottom="256dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="250dp"
         android:layout_weight="1"
         android:ems="10"
-        android:hint="Telefono"
+        android:hint="Edad"
         android:inputType="phone"
-        android:textColor="@color/common_google_signin_btn_text_dark_pressed"
-        android:textColorHint="@color/common_google_signin_btn_text_dark_pressed" />
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+      />
 
     <EditText
         android:id="@+id/ETApellidos"
@@ -67,15 +61,15 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="193dp"
-        android:layout_marginRight="193dp"
-        android:layout_marginBottom="194dp"
+        android:layout_marginEnd="102dp"
+        android:layout_marginRight="102dp"
+        android:layout_marginBottom="180dp"
         android:layout_weight="1"
         android:ems="10"
         android:hint="Apellidos"
         android:inputType="textPersonName"
-        android:textColor="@color/common_google_signin_btn_text_dark_pressed"
-        android:textColorHint="@color/common_google_signin_btn_text_dark_pressed" />
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+         />
 
     <ImageView
         android:id="@+id/IVRegistrarU"
@@ -88,7 +82,7 @@
         android:layout_marginRight="122dp"
         android:layout_marginBottom="426dp"
         android:layout_weight="1"
-        android:onClick="subirFoto"
-         />
+        android:background="@drawable/chido"
+        android:onClick="subirFoto" />
 
 </RelativeLayout>

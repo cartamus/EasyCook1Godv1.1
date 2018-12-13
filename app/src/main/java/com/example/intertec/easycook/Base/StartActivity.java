@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.intertec.easycook.Activity.Login;
-import com.example.intertec.easycook.Activity.RegisterActivity;
+import com.example.intertec.easycook.Activity.pruebas.RegisterActivity;
 import com.example.intertec.easycook.R;
 import com.google.firebase.auth.FirebaseAuth;
 

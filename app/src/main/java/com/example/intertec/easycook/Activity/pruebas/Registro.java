@@ -1,4 +1,4 @@
-package com.example.intertec.easycook.Activity;
+package com.example.intertec.easycook.Activity.pruebas;
 
 import android.app.ProgressDialog;
 import android.content.pm.ActivityInfo;
@@ -15,7 +15,6 @@ import com.example.intertec.easycook.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class Registro extends AppCompatActivity {
