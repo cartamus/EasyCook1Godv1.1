@@ -59,8 +59,8 @@ public class Menu extends AppCompatActivity {
         super.onStart();
 
     }
-
-    /*private void loadData() {
+/*
+    private void loadData() {
         Query query = fNotesDatabase.orderByValue();
 
         FirebaseRecyclerAdapter<NoteModel, NoteViewHolder> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<NoteModel, NoteViewHolder>(

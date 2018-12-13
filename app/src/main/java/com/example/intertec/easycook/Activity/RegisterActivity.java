@@ -37,7 +37,7 @@ public class RegisterActivity extends AppCompatActivity {
         inPass = (TextView) findViewById(R.id.input_reg_pass);
 
         fAuth = FirebaseAuth.getInstance();
-        fUsersDatabase = FirebaseDatabase.getInstance().getReference().child("Users");
+        fUsersDatabase = FirebaseDatabase.getInstance().getReference().child("Usuarios");
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
@@ -61,7 +61,7 @@ public class RegisterActivity extends AppCompatActivity {
     private void registerUser(final String name, String email, String password){
 
         progressDialog = new ProgressDialog(this);
-        progressDialog.setMessage("Processing your request, please wait...");
+        progressDialog.setMessage("Procesando el registro...");
 
         progressDialog.show();
 
@@ -73,7 +73,7 @@ public class RegisterActivity extends AppCompatActivity {
                         if (task.isSuccessful()){
 
                             fUsersDatabase.child(fAuth.getCurrentUser().getUid())
-                                    .child("basic").child("name").setValue(name)
+                                    .child("User").child("nombre").setValue(name)
                                     .addOnCompleteListener(new OnCompleteListener<Void>() {
                                         @Override
                                         public void onComplete(@NonNull Task<Void> task) {
@@ -82,7 +82,7 @@ public class RegisterActivity extends AppCompatActivity {
 
                                                 progressDialog.dismiss();
 
-                                                Intent mainIntent = new Intent(RegisterActivity.this, MainActivity.class);
+                                                Intent mainIntent = new Intent(RegisterActivity.this, silvido.class);
                                                 startActivity(mainIntent);
                                                 finish();
                                                 Toast.makeText(RegisterActivity.this, "User created!", Toast.LENGTH_SHORT).show();

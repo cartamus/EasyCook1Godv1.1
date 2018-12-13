@@ -52,7 +52,9 @@
         <activity android:name=".Activity.RegisterActivity" />
         <activity android:name=".Base.Menu" />
         <activity android:name=".Base.NewNoteActtivity" />
-        <activity android:name=".Base.StartActivity"></activity>
+        <activity android:name=".Base.StartActivity" />
+        <activity android:name=".Activity.registrarse" />
+        <activity android:name=".Activity.silvido"></activity>
     </application>
 
 </manifest>

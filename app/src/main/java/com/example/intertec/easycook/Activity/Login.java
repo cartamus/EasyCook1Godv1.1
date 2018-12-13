@@ -45,7 +45,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
 public class Login extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
-    private Button registro;
+    private Button registro,prueba,emailbueno;
     private GoogleApiClient googleApiClient;
     private SignInButton signInButton;
     public static final int SIGN_IN_CODE = 777;
@@ -69,6 +69,18 @@ public class Login extends AppCompatActivity implements GoogleApiClient.OnConnec
         setContentView(R.layout.activity_login);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         bindUI();
+        emailbueno.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                gotoMainemailgood();
+            }
+        });
+        prueba.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                gotoMainrprueba();
+            }
+        });
         registro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -181,6 +193,9 @@ public class Login extends AppCompatActivity implements GoogleApiClient.OnConnec
         edittextPassword = (EditText) findViewById(R.id.password);
         login = (Button) findViewById(R.id.button_login);
         recuerdame = (Switch) findViewById(R.id.switch1);
+        prueba=(Button)findViewById(R.id.pruebame);
+        emailbueno=(Button)findViewById(R.id.emailgood);
+
     }
     private void setCredentialsIfExist() {
         String email=Util.getUserMailPrefs(prefs);
@@ -201,6 +216,16 @@ public class Login extends AppCompatActivity implements GoogleApiClient.OnConnec
     }
     private void gotoMainregistro() {
         Intent intent = new Intent(this, Registro.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);//sirve para que cierre la aplicacion y no no regrese al login
+        startActivity(intent);
+    }
+    private void gotoMainrprueba() {
+        Intent intent = new Intent(this, silvido.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);//sirve para que cierre la aplicacion y no no regrese al login
+        startActivity(intent);
+    }
+    private void gotoMainemailgood() {
+        Intent intent = new Intent(this, RegisterActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);//sirve para que cierre la aplicacion y no no regrese al login
         startActivity(intent);
     }
