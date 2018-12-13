@@ -1,4 +1,4 @@
-package com.example.intertec.easycook.Activity;
+package com.example.intertec.easycook.Activity.pruebas;
 
 /**
  * Created by Juanmi on 07/12/2017.
