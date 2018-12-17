@@ -11,15 +11,12 @@ import android.support.v7.widget.SearchView;
 import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.intertec.easycook.R;
 import com.example.intertec.easycook.Utileria.ListViewAdapter;
 import com.example.intertec.easycook.Utileria.Model;
-import com.facebook.login.LoginManager;
-import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
 

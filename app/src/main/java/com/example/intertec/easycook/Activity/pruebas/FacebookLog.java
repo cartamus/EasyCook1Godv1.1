@@ -1,4 +1,4 @@
-package com.example.intertec.easycook.Activity;
+package com.example.intertec.easycook.Activity.pruebas;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.intertec.easycook.Activity.Login;
 import com.example.intertec.easycook.R;
 import com.facebook.login.widget.LoginButton;
 import com.google.firebase.auth.FirebaseAuth;

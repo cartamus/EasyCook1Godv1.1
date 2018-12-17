@@ -40,16 +40,18 @@ import com.google.firebase.storage.UploadTask;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
 
 
 public class registrarse extends AppCompatActivity {
     AnimationDrawable animacion;
-    String UserId, varNombre, varApellido, varTelefono, varCorreo;
+    String UserId, varNombre, varApellido, varEdad, varCorreo;
     EditText Nombre, Apellidos, Telefono;
     FirebaseUser firebaseUser;
     Bitmap Foto;
     ImageView UFoto;
-    Spinner type_user, type_carriers;
+
+
     private static final int COD_SELECCIONADA = 10;
     private static final int COD_FOTO = 20;
     private static final String CARPETA_IMAGEN = "imagenes";
@@ -63,6 +65,8 @@ public class registrarse extends AppCompatActivity {
     FirebaseStorage storage;
     StorageReference storageRef;
     StorageReference mountainsRef;
+
+
 
 
     @Override
@@ -82,9 +86,6 @@ public class registrarse extends AppCompatActivity {
 
     }
 
-    public void getTypesUsers() {
-
-    }
 
     public void Registrar(View view) {
         if (TextUtils.isEmpty(Nombre.getText().toString())) {
@@ -108,19 +109,15 @@ public class registrarse extends AppCompatActivity {
         varCorreo = firebaseUser.getEmail();
         varNombre = Nombre.getText().toString().trim();
         varApellido = Apellidos.getText().toString().trim();
-        varTelefono = Telefono.getText().toString().trim();
+        varEdad = Telefono.getText().toString().trim();
+
 
         Step1Registrar();
     }
 
 
-
     public void Step1Registrar(){
-        /*
-         *
-         *       CODIGO PARA SUBIR LA FOTO AL SERVIDOR EN EL APARTADO DE STRONGE, EN UNA CARPETA foto/
-         *
-         */
+
         try {
             progressDialog.setMessage("Subiendo imagen...");
             progressDialog.show();
@@ -161,7 +158,7 @@ public class registrarse extends AppCompatActivity {
                     Toast.makeText(registrarse.this, "La foto fue almacenada", Toast.LENGTH_LONG).show();
                     /*
                      *
-                     *
+                     *       MANDAMOS LLAMAR EL SIGUIENTE PROCESO SÍ TODO SALE BIEN
                      *
                      */
                     Step2Registrar();
@@ -223,7 +220,7 @@ public class registrarse extends AppCompatActivity {
             progressDialog.setMessage("Ingresando sus datos...");
             progressDialog.show();
             //Para ingresar los datos a la db
-            Users user = new Users(varNombre, varApellido, varTelefono);
+            Users user = new Users(varNombre, varApellido, varEdad);
             DatabaseReference mDatabase= FirebaseDatabase.getInstance().getReference();
             mDatabase.child("proyecto/db/usuarios").child(UserId).setValue(user);
             progressDialog.dismiss();
@@ -254,10 +251,10 @@ public class registrarse extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             if (task.isSuccessful()) {
-
+                                //Todo salio bien
                                 progressDialog.dismiss();
                                 Toast.makeText(registrarse.this, "Perfil actualizado", Toast.LENGTH_LONG).show();
-
+                                Step5Registrar();
                             }else {
                                 progressDialog.dismiss();
                                 Toast.makeText(registrarse.this, "No se puede actualizar perfil", Toast.LENGTH_LONG).show();
@@ -270,7 +267,22 @@ public class registrarse extends AppCompatActivity {
         }
     }
 
+    public void Step5Registrar(){
+        /*
+         *
+         *       SE LIMPIA EL FORMULARIO
+         *
+         * */
 
+
+
+        UFoto.setImageResource(R.drawable.chido);
+        Nombre.setText("");
+        Apellidos.setText("");
+        Telefono.setText("");
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
 
     public void subirFoto(View view){
         final CharSequence[] opciones={"Tomar Foto","Elegir de Galeria","Cancelar"};

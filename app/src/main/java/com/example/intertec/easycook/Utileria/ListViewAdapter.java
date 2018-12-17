@@ -9,7 +9,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.intertec.easycook.Activity.NewActivity;
+import com.example.intertec.easycook.Activity.pruebas.NewActivity;
 import com.example.intertec.easycook.R;
 
 import java.util.ArrayList;

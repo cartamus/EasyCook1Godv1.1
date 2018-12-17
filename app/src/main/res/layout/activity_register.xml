@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Activity.RegisterActivity">
+    tools:context=".Activity.pruebas.RegisterActivity">
 
     <EditText
         android:id="@+id/input_reg_name"
