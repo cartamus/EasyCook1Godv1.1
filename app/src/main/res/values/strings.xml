@@ -13,11 +13,10 @@
 
 
     <!-- Nodos Firebase -->
-    <string name="nodo_discos">discos</string>
-
+    <string name="nodo_discos">Recetas</string>
     <!-- Campos de los nodos -->
-    <string name="campo_titulo">titulo</string>
-    <string name="campo_anyo">anyo</string>
-
+    <string name="campo_receta">receta</string>
+    <string name="campo_categoria">categoria</string>
+    <string name="campo_autor">autor</string>
 
 </resources>

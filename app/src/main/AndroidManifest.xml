@@ -50,9 +50,7 @@
         <activity android:name=".Activity.PruebaBase" />
         <activity android:name=".Activity.NewActivity" />
         <activity android:name=".Activity.RegisterActivity" />
-        <activity android:name=".Base.Menu" />
-        <activity android:name=".Base.NewNoteActtivity" />
-        <activity android:name=".Base.StartActivity" />
+
         <activity android:name=".Activity.registrarse" />
         <activity android:name=".Activity.pruebas.silvido" />
     </application>

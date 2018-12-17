@@ -6,39 +6,34 @@ package com.example.intertec.easycook.Activity.pruebas;
 
 public class Disco {
 
-    private String titulo;
-    private String anyo;
-
+    private String receta,categoria,autor;
     public Disco(){
-
     }
-
-    public Disco(String titulo, String anyo) {
-        this.titulo = titulo;
-        this.anyo = anyo;
+    public Disco(String receta, String categoria,String autor) {
+        this.receta=receta;
+        this.categoria=categoria;
+        this.autor=autor;
     }
-
-    public String getTitulo() {
-        return titulo;
+    public String getReceta() {
+        return receta;
     }
-
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
+    public void setReceta(String receta) {
+        this.receta = receta;
     }
-
-    public String getAnyo() {
-        return anyo;
+    public String getCategoria() {
+        return categoria;
     }
-
-    public void setAnyo(String anyo) {
-        this.anyo = anyo;
+    public void setCategoria(String categoria) { this.categoria = categoria; }
+    public String getAutor() {
+        return autor;
     }
-
+    public void setAutor(String autor) { this.autor = autor; }
     @Override
     public String toString() {
-        return "Disco{" +
-                "titulo='" + titulo + '\'' +
-                ", anyo='" + anyo + '\'' +
-                '}';
+        return "Recetas{" +
+                "receta=" + receta + '\'' +
+                "categoria=" + categoria + '\'' +
+                "autor=" + autor + '\'' +
+                "}";
     }
 }

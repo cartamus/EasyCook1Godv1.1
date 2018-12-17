@@ -189,12 +189,12 @@ public class Login extends AppCompatActivity implements GoogleApiClient.OnConnec
         });
     }
     private void bindUI() {
-        registro=(Button)findViewById(R.id.registrar);
+
         edittextEmail = (EditText) findViewById(R.id.mail);
         edittextPassword = (EditText) findViewById(R.id.password);
         login = (Button) findViewById(R.id.button_login);
         recuerdame = (Switch) findViewById(R.id.switch1);
-        prueba=(Button)findViewById(R.id.pruebame);
+
         emailbueno=(Button)findViewById(R.id.emailgood);
 
     }

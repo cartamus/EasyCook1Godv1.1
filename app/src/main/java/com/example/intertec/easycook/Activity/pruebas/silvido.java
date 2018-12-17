@@ -21,83 +21,73 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 public class silvido extends AppCompatActivity {
-    EditText text_titulo, text_anyo;
+    EditText nombre_Receta,autor,categoria,puntuacion;
     Button boton_anyadir, boton_mostrar, boton_modificar, boton_borrar;
     ListView lista;
-
     DatabaseReference bbdd;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_silvido);
-
-        text_titulo = (EditText) findViewById(R.id.editText);
-        text_anyo = (EditText) findViewById(R.id.editText2);
+        nombre_Receta = (EditText) findViewById(R.id.edtCategoria);
+        autor = (EditText) findViewById(R.id.edtAutor);
+        categoria=(EditText)findViewById(R.id.edtAutor);
         boton_anyadir = (Button) findViewById(R.id.button);
         boton_mostrar = (Button) findViewById(R.id.button2);
         boton_modificar = (Button) findViewById(R.id.button3);
         boton_borrar = (Button) findViewById(R.id.button4);
         lista = (ListView)findViewById(R.id.listView);
-
-       bbdd = FirebaseDatabase.getInstance().getReference(getString(R.string.nodo_discos));
-
+        bbdd = FirebaseDatabase.getInstance().getReference(getString(R.string.nodo_discos));
         bbdd.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-
                 ArrayAdapter<String> adaptador;
                 ArrayList<String> listado = new ArrayList<String>();
-
                 for(DataSnapshot datasnapshot: dataSnapshot.getChildren()){
                     Disco disco = datasnapshot.getValue(Disco.class);
-
-                    String titulo = disco.getTitulo();
-                    listado.add(titulo);
+                    String receta1 = disco.getReceta();
+                    listado.add(receta1);
+                    String categoria1 = disco.getCategoria();
+                    listado.add(categoria1);
+                    String autor1 = disco.getAutor();
+                    listado.add(autor1);
                 }
-
                 adaptador = new ArrayAdapter<String>(silvido.this,android.R.layout.simple_list_item_1,listado);
                 lista.setAdapter(adaptador);
-
             }
-
             @Override
             public void onCancelled(DatabaseError databaseError) {
-
             }
         });
-
         boton_anyadir.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
-                String titulo = text_titulo.getText().toString();
-                String anyo = text_anyo.getText().toString();
-
-                if(!TextUtils.isEmpty(titulo)){
-                    if(!TextUtils.isEmpty(anyo)) {
-
-                        Disco d = new Disco(titulo,anyo);
-
-                        String clave = bbdd.push().getKey();
-
-                        bbdd.child(clave).setValue(d);
-
-                        Toast.makeText(silvido.this, "Disco añadido", Toast.LENGTH_LONG).show();
+                String txtReceta = nombre_Receta.getText().toString();
+                String txtCategoria = categoria.getText().toString();
+                String txtAutor = autor.getText().toString();
+                if(!TextUtils.isEmpty(txtReceta)){
+                    if(!TextUtils.isEmpty(txtCategoria)){
+                        if(!TextUtils.isEmpty(txtAutor)) {
+                            Disco d = new Disco(txtReceta,txtCategoria,txtAutor);
+                            String clave = bbdd.push().getKey();
+                            bbdd.child(clave).setValue(d);
+                            Toast.makeText(silvido.this, "Disco añadido", Toast.LENGTH_LONG).show();
+                        }
+                        else{
+                            Toast.makeText(silvido.this, "Introduce el nombre de la receta", Toast.LENGTH_LONG).show();
+                        }
                     }
-                    else{
-                        Toast.makeText(silvido.this, "Debes de introducir un anyo", Toast.LENGTH_LONG).show();
+                    else {
+                        Toast.makeText(silvido.this, "introduce la categoria", Toast.LENGTH_LONG).show();
                     }
                 }
                 else {
-                    Toast.makeText(silvido.this, "Debes de introducir un título", Toast.LENGTH_LONG).show();
+                    Toast.makeText(silvido.this, "introduce el autor", Toast.LENGTH_LONG).show();
                 }
-
             }
         });
-
         boton_mostrar.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
-
-               Query q=bbdd.orderByChild(getString(R.string.campo_anyo)).equalTo("1995");
-
+                Query q=bbdd.orderByChild(getString(R.string.campo_receta)).equalTo("a");
                 q.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
@@ -107,82 +97,60 @@ public class silvido extends AppCompatActivity {
                             Toast.makeText(silvido.this, "He encontrado "+cont, Toast.LENGTH_LONG).show();
                         }
                     }
-
                     @Override
                     public void onCancelled(DatabaseError databaseError) {
-
                     }
                 });
-
             }
         });
-
         boton_modificar.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
-
-                String titulo = text_titulo.getText().toString();
-
-                if(!TextUtils.isEmpty(titulo)){
-                   Query q=bbdd.orderByChild(getString(R.string.campo_titulo)).equalTo(titulo);
-
+                String autor1= autor.getText().toString();
+                if(!TextUtils.isEmpty(autor1)){
+                    Query q=bbdd.orderByChild(getString(R.string.campo_autor)).equalTo(autor1);
                     q.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
-
                             for(DataSnapshot datasnapshot: dataSnapshot.getChildren()){
                                 String clave=datasnapshot.getKey();
-                             bbdd.child(clave).child(getString(R.string.campo_anyo)).setValue(text_anyo.getText().toString());
+                                bbdd.child(clave).child(getString(R.string.campo_receta)).setValue(nombre_Receta.getText().toString());
                             }
                         }
-
                         @Override
                         public void onCancelled(DatabaseError databaseError) {
-
                         }
                     });
-
-                  //  Toast.makeText(silvidothis, "El año del disco "+titulo+" se ha modificado con éxito", Toast.LENGTH_LONG).show();
+                    //  Toast.makeText(silvidothis, "El año del disco "+titulo+" se ha modificado con éxito", Toast.LENGTH_LONG).show();
                 }
                 else{
                     Toast.makeText(silvido.this, "Debes de introducir un título", Toast.LENGTH_LONG).show();
                 }
-
             }
         });
-
         boton_borrar.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
-                String titulo = text_titulo.getText().toString();
-
-                if(!TextUtils.isEmpty(titulo)){
-                    Query q=bbdd.orderByChild(getString(R.string.campo_titulo)).equalTo(titulo);
-
+                String autor1 = autor.getText().toString();
+                if(!TextUtils.isEmpty(autor1)){
+                    Query q=bbdd.orderByChild(getString(R.string.campo_autor)).equalTo(autor1);
                     q.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
-
                             for(DataSnapshot datasnapshot: dataSnapshot.getChildren()){
                                 String clave=datasnapshot.getKey();
                                 DatabaseReference ref = bbdd.child(clave);
-
                                 ref.removeValue();
                             }
                         }
-
                         @Override
                         public void onCancelled(DatabaseError databaseError) {
-
                         }
                     });
-
-                    Toast.makeText(silvido.this, "El disco "+titulo+" se ha borrado con éxito", Toast.LENGTH_LONG).show();
+                    Toast.makeText(silvido.this, "La receta de  "+autor1+" se ha borrado con éxito", Toast.LENGTH_LONG).show();
                 }
                 else{
                     Toast.makeText(silvido.this, "Debes de introducir un título", Toast.LENGTH_LONG).show();
                 }
-
             }
         });
     }
-
 }
