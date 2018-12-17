@@ -1,4 +1,4 @@
-package com.example.intertec.easycook.Activity.pruebas;
+package com.example.intertec.easycook.Activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -85,24 +85,7 @@ public class silvido extends AppCompatActivity {
                 }
             }
         });
-        boton_mostrar.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View view){
-                Query q=bbdd.orderByChild(getString(R.string.campo_receta)).equalTo("a");
-                q.addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
-                        int cont=0;
-                        for(DataSnapshot datasnapshot: dataSnapshot.getChildren()){
-                            cont++;
-                            Toast.makeText(silvido.this, "He encontrado "+cont, Toast.LENGTH_LONG).show();
-                        }
-                    }
-                    @Override
-                    public void onCancelled(DatabaseError databaseError) {
-                    }
-                });
-            }
-        });
+
         boton_modificar.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
                 String autor1= autor.getText().toString();

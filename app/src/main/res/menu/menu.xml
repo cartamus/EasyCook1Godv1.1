@@ -2,15 +2,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 <item android:id="@+id/menu_logout"
-    android:title="log out"
+    android:title="salir"
    app:showAsAction="never"/>
 
     <item android:id="@+id/forget_logout"
-        android:title="forget log out"
+        android:title="Slir totalmente"
         app:showAsAction="never"/>
     <item
         android:id="@+id/action_settings"
-        android:title="Settings"/>
+        android:title="Gestion"/>
     <item android:id="@+id/action_search"
         android:title="Search"
         android:icon="@android:drawable/ic_menu_search"

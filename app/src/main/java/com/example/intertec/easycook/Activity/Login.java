@@ -17,11 +17,6 @@ import android.widget.ProgressBar;
 import android.widget.Switch;
 import android.widget.Toast;
 
-import com.example.intertec.easycook.Activity.pruebas.FacebookLog;
-import com.example.intertec.easycook.Activity.pruebas.GoogleLog;
-import com.example.intertec.easycook.Activity.pruebas.RegisterActivity;
-import com.example.intertec.easycook.Activity.pruebas.Registro;
-import com.example.intertec.easycook.Activity.pruebas.silvido;
 import com.example.intertec.easycook.Utileria.Util;
 import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
@@ -63,7 +58,7 @@ public class Login extends AppCompatActivity implements GoogleApiClient.OnConnec
     private SharedPreferences prefs;
     private EditText edittextPassword;
     private EditText edittextEmail;
-    private Button login;
+    private Button login,pruebas;
     private Switch recuerdame;
     private FirebaseAuth fAuth;
     @Override
@@ -74,24 +69,20 @@ public class Login extends AppCompatActivity implements GoogleApiClient.OnConnec
         setContentView(R.layout.activity_login);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         bindUI();
-        emailbueno.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                gotoMainemailgood();
-            }
-        });
-        prueba.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                gotoMainrprueba();
-            }
-        });
         registro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-       gotoMainregistro();
+                goRegister();
             }
         });
+        pruebas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                gopruebas();
+            }
+        });
+
+
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
@@ -198,8 +189,8 @@ public class Login extends AppCompatActivity implements GoogleApiClient.OnConnec
         edittextPassword = (EditText) findViewById(R.id.password);
         login = (Button) findViewById(R.id.button_login);
         recuerdame = (Switch) findViewById(R.id.switch1);
-
-        emailbueno=(Button)findViewById(R.id.emailgood);
+pruebas=(Button)findViewById(R.id.pruebas);
+        registro=(Button)findViewById(R.id.registro);
 
     }
     private void setCredentialsIfExist() {
@@ -219,18 +210,10 @@ public class Login extends AppCompatActivity implements GoogleApiClient.OnConnec
             editor.apply();
         }
     }
-    private void gotoMainregistro() {
-        Intent intent = new Intent(this, Registro.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);//sirve para que cierre la aplicacion y no no regrese al login
-        startActivity(intent);
-    }
-    private void gotoMainrprueba() {
-        Intent intent = new Intent(this, silvido.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);//sirve para que cierre la aplicacion y no no regrese al login
-        startActivity(intent);
-    }
+
+
     private void gotoMainemailgood() {
-        Intent intent = new Intent(this, RegisterEPActivity.class);
+        Intent intent = new Intent(this, com.example.intertec.easycook.Activity.RegisterActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);//sirve para que cierre la aplicacion y no no regrese al login
         startActivity(intent);
     }
@@ -289,6 +272,16 @@ public class Login extends AppCompatActivity implements GoogleApiClient.OnConnec
 
     private void goMainScreen() {
         Intent intent = new Intent(this, GoogleLog.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+    }
+    private void goRegister() {
+        Intent intent = new Intent(this, RegisterActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+    }
+    private void gopruebas() {
+        Intent intent = new Intent(this, silvido.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }

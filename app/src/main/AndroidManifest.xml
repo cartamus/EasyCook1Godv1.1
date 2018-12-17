@@ -43,18 +43,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activity.Registro" />
-        <activity android:name=".Activity.Anonimo" />
+
+<activity android:name=".Activity.RegisterActivity"/>
         <activity android:name=".Activity.GoogleLog" />
         <activity android:name=".Activity.FacebookLog" />
-        <activity android:name=".Activity.PruebaBase" />
-        <activity android:name=".Activity.NewActivity" />
-        <activity android:name=".Activity.RegisterActivity" />
-        <activity android:name=".Base.Menu" />
-        <activity android:name=".Base.NewNoteActtivity" />
-        <activity android:name=".Base.StartActivity" />
-        <activity android:name=".Activity.registrarse" />
-        <activity android:name=".Activity.pruebas.silvido" />
+        <activity android:name=".Activity.silvido"/>
     </application>
 
 </manifest>

@@ -1,4 +1,4 @@
-package com.example.intertec.easycook.Activity.pruebas;
+package com.example.intertec.easycook.Activity;
 
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -23,9 +23,7 @@ public class PruebaBase extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_prueba_base);
-        mensajeTextView = findViewById(R.id.mensajeTextView);
-        mensajeEditText = findViewById(R.id.mensajeEditText);
+
     }
     @Override
     protected void onStart() {

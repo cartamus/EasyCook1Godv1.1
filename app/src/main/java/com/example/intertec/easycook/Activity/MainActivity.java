@@ -22,9 +22,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 private SharedPreferences prefs;
-    private TextView nameTextView;
-    private TextView emailTextView;
-    private TextView uidTextView;
+
     ListView listView;
     ListViewAdapter adapter;
     String[] title;
@@ -65,11 +63,7 @@ private SharedPreferences prefs;
 
 
     }
-    private void goLoginScreen() {
-        Intent intent = new Intent(this, Login.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(intent);
-    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -110,7 +104,7 @@ private SharedPreferences prefs;
                 logout1();
                 return true;
             case R.id.action_settings:
-
+GestionRecetas();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -119,6 +113,13 @@ private SharedPreferences prefs;
     private void logout1(){
 
         Intent intent=new Intent(this, Login.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK| Intent.FLAG_ACTIVITY_CLEAR_TASK);//sirve para que cierre la aplicacion y no no regrese al login
+        startActivity(intent);
+
+    }
+    private void GestionRecetas(){
+
+        Intent intent=new Intent(this, silvido.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK| Intent.FLAG_ACTIVITY_CLEAR_TASK);//sirve para que cierre la aplicacion y no no regrese al login
         startActivity(intent);
 

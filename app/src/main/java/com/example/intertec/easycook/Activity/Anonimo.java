@@ -1,4 +1,4 @@
-package com.example.intertec.easycook.Activity.pruebas;
+package com.example.intertec.easycook.Activity;
 
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
